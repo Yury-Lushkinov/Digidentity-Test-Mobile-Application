@@ -14,7 +14,7 @@ protocol ServiceHolderProtocol {
 }
 
 class ServiceHolder: ServiceHolderProtocol {
-    let networkService: NetworkServiceProtocol = NetworkService()
+    let networkService: NetworkServiceProtocol = NetworkService(requestService: RequestService())
     let dataStorage: DataStorageProtocol = DataStorage()
     let imageStorage: ImageStorageProtocol = ImageStorage()
 }

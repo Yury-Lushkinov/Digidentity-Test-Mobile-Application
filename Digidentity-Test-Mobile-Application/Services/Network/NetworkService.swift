@@ -38,6 +38,11 @@ protocol NetworkServiceProtocol {
 
 class NetworkService: NetworkServiceProtocol {
     let url = URL(string: "https://marlove.net/e/mock/v1/items")!
+    let requestService: RequestServiceProtocol
+
+    init(requestService: RequestServiceProtocol) {
+        self.requestService = requestService
+    }
 
     func fetchItems() async throws -> [Item] {
         return try await fetchServerItems()
@@ -58,11 +63,8 @@ class NetworkService: NetworkServiceProtocol {
         var request = URLRequest(url: url)
         request.addValue("d3faa4b140a2e42f43a06cab0d69602b", forHTTPHeaderField: "Authorization")
 
-        guard let responce = try? await URLSession.shared.data(for: request),
-              let items = try? JSONDecoder().decode([ItemResponce].self, from: responce.0) else {
-            return []
-        }
+        let responce: [ItemResponce] = try await requestService.send(request: request)
 
-        return items.map { Item(responce: $0) }
+        return responce.map { Item(responce: $0) }
     }
 }
