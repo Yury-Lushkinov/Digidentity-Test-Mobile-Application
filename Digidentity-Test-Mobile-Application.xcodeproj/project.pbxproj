@@ -33,6 +33,8 @@
 		84CE38AA2C11C2C600E3AD45 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE38A92C11C2C600E3AD45 /* Router.swift */; };
 		84CE38AC2C11EAE300E3AD45 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE38AB2C11EAE300E3AD45 /* ModuleBuilder.swift */; };
 		84E50F0A2C1743A000F528F8 /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E50F092C1743A000F528F8 /* RequestService.swift */; };
+		84E50F0E2C174D2000F528F8 /* RequestServiceProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E50F0D2C174D2000F528F8 /* RequestServiceProtocolMock.swift */; };
+		84E50F102C174E9600F528F8 /* NetworkServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E50F0F2C174E9600F528F8 /* NetworkServiceTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		84CE38A92C11C2C600E3AD45 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		84CE38AB2C11EAE300E3AD45 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		84E50F092C1743A000F528F8 /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
+		84E50F0D2C174D2000F528F8 /* RequestServiceProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestServiceProtocolMock.swift; sourceTree = "<group>"; };
+		84E50F0F2C174E9600F528F8 /* NetworkServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 				842919E02C11FB8700299912 /* ItemsListPresenterTest.swift */,
 				84C7597A2C122DB400652895 /* ItemDetailsPresenterTest.swift */,
 				84C7597C2C12390F00652895 /* ItemDetailsModelTest.swift */,
+				84E50F0F2C174E9600F528F8 /* NetworkServiceTest.swift */,
 			);
 			path = "Digidentity-Test-Mobile-ApplicationTests";
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				84C759762C120A3000652895 /* AutoMockable.generated.swift */,
+				84E50F0D2C174D2000F528F8 /* RequestServiceProtocolMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -345,8 +351,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84E50F102C174E9600F528F8 /* NetworkServiceTest.swift in Sources */,
 				842919E12C11FB8700299912 /* ItemsListPresenterTest.swift in Sources */,
 				84C7597B2C122DB400652895 /* ItemDetailsPresenterTest.swift in Sources */,
+				84E50F0E2C174D2000F528F8 /* RequestServiceProtocolMock.swift in Sources */,
 				84C759772C120A3000652895 /* AutoMockable.generated.swift in Sources */,
 				84C7597D2C12390F00652895 /* ItemDetailsModelTest.swift in Sources */,
 			);

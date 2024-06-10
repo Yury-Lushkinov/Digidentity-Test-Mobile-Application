@@ -7,7 +7,7 @@
 
 import Foundation
 
-private struct ItemResponce: Codable {
+struct ItemResponce: Codable {
     enum CodingKeys: String, CodingKey {
         case text
         case confidence

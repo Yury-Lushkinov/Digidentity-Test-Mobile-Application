@@ -7,7 +7,6 @@
 
 import Foundation
 
-// sourcery: AutoMockable
 protocol RequestServiceProtocol {
     func send<Responce: Decodable>(request: URLRequest) async throws -> Responce
 }
