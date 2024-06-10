@@ -10,7 +10,7 @@ import UIKit
 import AppKit
 #endif
 
-@testable import Digidentity_Test_Mobile_Application
+@testable import Digidntity_Test_Mobile_Application
 
 
 
@@ -425,6 +425,39 @@ class NetworkServiceProtocolMock: NetworkServiceProtocol {
             return try await fetchItemsSinceIDStringMaxIDStringItemClosure(sinceID, maxID)
         } else {
             return fetchItemsSinceIDStringMaxIDStringItemReturnValue
+        }
+    }
+
+
+}
+class RequestServiceProtocolMock: RequestServiceProtocol {
+
+
+
+
+    //MARK: - send<Responce: Decodable>
+
+    var sendResponceDecodableRequestURLRequestResponceThrowableError: (any Error)?
+    var sendResponceDecodableRequestURLRequestResponceCallsCount = 0
+    var sendResponceDecodableRequestURLRequestResponceCalled: Bool {
+        return sendResponceDecodableRequestURLRequestResponceCallsCount > 0
+    }
+    var sendResponceDecodableRequestURLRequestResponceReceivedRequest: (URLRequest)?
+    var sendResponceDecodableRequestURLRequestResponceReceivedInvocations: [(URLRequest)] = []
+    var sendResponceDecodableRequestURLRequestResponceReturnValue: Responce!
+    var sendResponceDecodableRequestURLRequestResponceClosure: ((URLRequest) async throws -> Responce)?
+
+    func send<Responce: Decodable>(request: URLRequest) async throws -> Responce {
+        sendResponceDecodableRequestURLRequestResponceCallsCount += 1
+        sendResponceDecodableRequestURLRequestResponceReceivedRequest = request
+        sendResponceDecodableRequestURLRequestResponceReceivedInvocations.append(request)
+        if let error = sendResponceDecodableRequestURLRequestResponceThrowableError {
+            throw error
+        }
+        if let sendResponceDecodableRequestURLRequestResponceClosure = sendResponceDecodableRequestURLRequestResponceClosure {
+            return try await sendResponceDecodableRequestURLRequestResponceClosure(request)
+        } else {
+            return sendResponceDecodableRequestURLRequestResponceReturnValue
         }
     }
 

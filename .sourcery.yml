@@ -1,0 +1,8 @@
+sources:
+  - Digidentity-Test-Mobile-Application
+templates:
+  - sourcery/AutoMockable.stencil
+forceParse:
+output:
+  Digidentity-Test-Mobile-ApplicationTests/Mocks
+args:
